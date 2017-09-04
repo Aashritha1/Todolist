@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+
+    <style>
+    body{
+      background-color:#b3cce6;
+    }
+    .button{
+        background-color: #4d4d00; /* Green */
+    border: none;
+    color: white;
+    padding: 8px 1 0px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    }
+    h2{
+       text-align: center;
+       color: white;
+    }
+    input[type=text] {
+    width: 100%;
+    padding: 6px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+}
+
+label {
+    cursor: default;
+    color:green;
+}
+    </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Create to do list</h2>
+  <form class="form-horizontal" action="/action_page.php">
+
+    <table>
+
+       {{ form.as_table }}
+    </table>
+
+
+      <button type="submit" class="button">Submit</button>
+
+  </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<html>
+<head>
+  <title>Jquery Simple</title>
+  <!-- <link rel="stylesheet" type="text/css"  href="mystyle.css"> -->
+	</head>
+
+<body>
+
+	<script
+     src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous">
+  </script>
+
+
+<div class="container">
+  <p class="heading">Welcome to house</p>
+</div>
+<div class="list_container">
+  <div>
+
+   <script type="text/javascript">
+      var heading=$('.container').html();
+
+      var button1=$('<button class="abhi1">click to get json object</button>');
+
+       $('.container').append(button1);
+
+// debugger
+
+
+
+$('.abhi1).click(function(){
+    $.ajax({ url:'http://localhost:8000/todo/todoLists/',
+            method:'GET',
+            success: function(result){
+                var markup = "<li id='${id}' class='todolist'><b>${name}</b>(${creation_date})</li><br>"
+                $.template('temp',markup);
+                $.tmpl('temp',result).appendTo('#lists');
+            }
+    });
+
+
+});
+
+
+// $('.abhi1').click(function(){
+//     $.ajax({ url:'http://localhost:8000/online/printtodolist_using_serializers/',
+//             method:'GET',
+//             success: function(result){
+//                  $.each(result, function(i, field){
+//                    var x="<div>"+i+"</div>"
+//                    $(".list_container").append(x);
+//                  })
+//             }
+//     });
+
+
+// });
+
+     </script>
+  </div>
+</div>
+
+  </body>
+
+  </html>
